@@ -9,15 +9,28 @@ namespace Axios_Assyst.Models
     public class _customFields
     {
         public string customFieldShortCode { get; set; }
-    }
-
-    public class _customFieldString : _customFields
-    {
         public string stringValue { get; set; }
-    }
-
-    public class _customFieldLookup : _customFields
-    {
         public string customLookupValueShortCode { get; set; }
+
+        // Define methods for definition
+        public _customFields() { } // no custom definition required as set dynamically
+
+        public _customFields(Axios_Assyst.Enums.customFieldValueType valueType, string customFieldShortCode, string value) // defines a string value
+        {
+            this.customFieldShortCode = customFieldShortCode; // shortcode is always defined
+
+            if (valueType == Enums.customFieldValueType.SYSTEMLOOKUP)
+            {
+                this.customLookupValueShortCode = value;
+            }
+            else if (valueType == Enums.customFieldValueType.STRING)
+            {
+                this.stringValue = value;
+            }
+            else
+            {
+                throw new ArgumentException("The provided value type is not supported for this operation");
+            }
+        }
     }
 }
