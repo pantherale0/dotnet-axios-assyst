@@ -18,12 +18,13 @@ namespace Axios_Assyst.Actions
             this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
             this.causeItemId = causeItemId;
             this.causeCategoryId = causeCategoryId;
+            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters[1] };
             if (isWithdraw)
             {
-                this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "WITHDRAW" } };
+                this.actionType.resolvingParameters[0] = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "WITHDRAW" };
             } else
             {
-                this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "CLOSURE" } };
+                this.actionType.resolvingParameters[0] = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "CLOSURE" };
             }
         }
     }

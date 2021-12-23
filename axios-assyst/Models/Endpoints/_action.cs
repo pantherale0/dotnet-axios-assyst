@@ -20,7 +20,8 @@ namespace Axios_Assyst.Models.Endpoints
             this.eventId = eventId;
             this.remarks = remarks;
             this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
-            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = actionShortcode } };
+            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters[1] };
+            this.actionType.resolvingParameters[0] = new Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = actionShortcode };
         }
     }
 }

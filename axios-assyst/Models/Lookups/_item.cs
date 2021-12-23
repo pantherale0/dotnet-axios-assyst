@@ -8,14 +8,15 @@ namespace Axios_Assyst.Models.Lookups
 {
     public class _item
     {
-        public _resolvingParameters resolvingParameters;
+        public _resolvingParameters[] resolvingParameters;
         public _item()
         {
 
         }
         public _item(string parameterName, string parameterValue)
         {
-            resolvingParameters = new _resolvingParameters() { parameterName = parameterName, parameterValue = parameterValue };
+            resolvingParameters = new _resolvingParameters[1];
+            resolvingParameters[0] = new _resolvingParameters { parameterName = parameterName, parameterValue = parameterValue };
         }
     }
 }

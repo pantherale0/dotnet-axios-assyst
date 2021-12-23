@@ -12,8 +12,10 @@ Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(close));
 Console.WriteLine();
 
 // Test customFields
-Axios_Assyst.Events.@event eventData = new Axios_Assyst.Events.@event();
-eventData.customFields = new Axios_Assyst.Models.Common._customFields() { customFieldShortCode = "TESTING", stringValue = "TEST" };
+Axios_Assyst.Models.Endpoints._event eventData = new Axios_Assyst.Models.Endpoints._event();
+eventData.customFields = new Axios_Assyst.Models.Common._customFields[2];
+eventData.customFields[0] = new Axios_Assyst.Models.Common._customFields { customFieldShortCode = "LOOKUP", customLookupValueShortCode = "SYSTEM" };
+eventData.customFields[1] = new Axios_Assyst.Models.Common._customFields { customFieldShortCode = "NAME", stringValue = "JOHN" };
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.None, settings));
 Console.WriteLine();
 
@@ -28,16 +30,19 @@ Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(userItem, Newtonso
 Console.WriteLine();
 
 // Test creation of a new event
-eventData = new Axios_Assyst.Events.@event();
-eventData.eventType = Axios_Assyst.Enums.eventTypeEnum.CHANGE;
-eventData.subEventType = Axios_Assyst.Enums.subEventTypeEnum.SERVICEREQUEST;
-eventData.remarks = "The computer name blah blah blah";
-eventData.affectedUserId = 53942;
+eventData = new Axios_Assyst.Models.Endpoints._event();
+eventData.eventType = Axios_Assyst.Enums.eventTypeEnum.INCIDENT;
+eventData.remarks = "This would be the description";
+eventData.affectedUser = new Axios_Assyst.Models.Lookups._resource { resolvingParameters = new Axios_Assyst.Models.Lookups._resolvingParameters[2] };
+Console.WriteLine("Enter shortCode: ");
+eventData.affectedUser.resolvingParameters[0] = new Axios_Assyst.Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = Console.ReadLine() };
+Console.WriteLine("Enter staffNumber: ");
+eventData.affectedUser.resolvingParameters[1] = new Axios_Assyst.Models.Lookups._resolvingParameters { parameterName = "staffNumber", parameterValue = Console.ReadLine() };
 eventData.itemAId = 10301;
 eventData.category = new Axios_Assyst.Models.Common._category("shortCode", "MAINTENANCE");
 eventData.shortDescription = "This would be the title";
 eventData.seriousnessId = 16;
 eventData.priority = new Axios_Assyst.Models.Common._priority("shortCode", "LOW");
 eventData.assignedServDeptId = 1;
-Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.None, settings));
+Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.Indented, settings));
 Console.WriteLine();

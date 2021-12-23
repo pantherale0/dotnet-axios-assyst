@@ -15,7 +15,8 @@ namespace Axios_Assyst.Actions
             this.eventId = eventId;
             this.remarks = remarks;
             this.assignedServDeptId = assignedServDeptId;
-            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "REASSIGN" } };
+            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters[1]  };
+            this.actionType.resolvingParameters[0] = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "REASSIGN" };
             this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
         }
     }
