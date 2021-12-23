@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Axios_Assyst.Movements
+namespace Axios_Assyst.Models.Endpoints
 {
-    public class movement
+    public class _movement
     {
         public string remarks = "";
         public bool? discontinued;
@@ -20,12 +20,12 @@ namespace Axios_Assyst.Movements
         public int? costCentreId;
         public int? slaId;
 
-        public movement() // Allow definition for an empty object
+        public _movement() // Allow definition for an empty object
         {
             this.moveDate = DateTime.Now;
         }
 
-        public movement(int itemId, string remarks, int moveReasonId, int itemStatusId) // A basic movement with no change to contact user etc.
+        public _movement(int itemId, string remarks, int moveReasonId, int itemStatusId) // A basic movement with no change to contact user etc.
         {
             this.itemId = itemId;
             this.remarks = remarks;
@@ -34,7 +34,7 @@ namespace Axios_Assyst.Movements
             this.moveDate = DateTime.Now;
         }
 
-        public movement(int itemId, string remarks, int moveReasonId, int itemStatusId, int contactUserId) // Basic movement with contactUserId
+        public _movement(int itemId, string remarks, int moveReasonId, int itemStatusId, int contactUserId) // Basic movement with contactUserId
         {
             this.itemId = itemId;
             this.remarks = remarks;
@@ -44,7 +44,7 @@ namespace Axios_Assyst.Movements
             this.moveDate = DateTime.Now;
         }
 
-        public movement(int itemId, string remarks, int moveReasonId, int itemStatusId, int contactUserId, DateTime moveDate) // Defines same as above but with move date
+        public _movement(int itemId, string remarks, int moveReasonId, int itemStatusId, int contactUserId, DateTime moveDate) // Defines same as above but with move date
         {
             this.itemId = itemId;
             this.remarks = remarks;
@@ -53,6 +53,5 @@ namespace Axios_Assyst.Movements
             this.itemStatusId = itemStatusId;
             this.moveDate = moveDate;
         }
-
     }
 }

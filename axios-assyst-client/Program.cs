@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System;
+
 Console.WriteLine("Hello, World!");
 
 // Define the serializer settings
@@ -11,12 +13,12 @@ Console.WriteLine();
 
 // Test customFields
 Axios_Assyst.Events.@event eventData = new Axios_Assyst.Events.@event();
-eventData.customFields = new Axios_Assyst.Models._customFields() { customFieldShortCode = "TESTING", stringValue = "TEST" };
+eventData.customFields = new Axios_Assyst.Models.Common._customFields() { customFieldShortCode = "TESTING", stringValue = "TEST" };
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.None, settings));
 Console.WriteLine();
 
 // Test a movement
-Axios_Assyst.Movements.movement movement = new Axios_Assyst.Movements.movement(32144, @"Testing\""", 13, 10);
+Axios_Assyst.Models.Endpoints._movement movement = new Axios_Assyst.Models.Endpoints._movement(32144, @"Testing\""", 13, 10);
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(movement, Newtonsoft.Json.Formatting.None, settings));
 Console.WriteLine();
 
@@ -32,10 +34,10 @@ eventData.subEventType = Axios_Assyst.Enums.subEventTypeEnum.SERVICEREQUEST;
 eventData.remarks = "The computer name blah blah blah";
 eventData.affectedUserId = 53942;
 eventData.itemAId = 10301;
-eventData.category = new Axios_Assyst.Models._category("shortCode", "MAINTENANCE");
+eventData.category = new Axios_Assyst.Models.Common._category("shortCode", "MAINTENANCE");
 eventData.shortDescription = "This would be the title";
 eventData.seriousnessId = 16;
-eventData.priority = new Axios_Assyst.Models._priority("shortCode", "LOW");
+eventData.priority = new Axios_Assyst.Models.Common._priority("shortCode", "LOW");
 eventData.assignedServDeptId = 1;
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.None, settings));
 Console.WriteLine();

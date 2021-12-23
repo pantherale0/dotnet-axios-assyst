@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Actions
 {
-    public class close : action
+    public class close : Models.Endpoints._action
     {
         public int causeItemId;
         public int causeCategoryId;
@@ -15,15 +15,15 @@ namespace Axios_Assyst.Actions
         {
             this.eventId = eventId;
             this.remarks = remarks;
-            this.serviceTime = new Models._serviceTime { value = serviceTime };
+            this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
             this.causeItemId = causeItemId;
             this.causeCategoryId = causeCategoryId;
             if (isWithdraw)
             {
-                this.actionType = new Models._actionType { resolvingParameters = new Models._resolvingParameters { parameterName = "shortCode", parameterValue = "WITHDRAW" } };
+                this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "WITHDRAW" } };
             } else
             {
-                this.actionType = new Models._actionType { resolvingParameters = new Models._resolvingParameters { parameterName = "shortCode", parameterValue = "CLOSURE" } };
+                this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "CLOSURE" } };
             }
         }
     }

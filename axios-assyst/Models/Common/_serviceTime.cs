@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Axios_Assyst.Models
+namespace Axios_Assyst.Models.Common
 {
     public class _serviceTime
     {

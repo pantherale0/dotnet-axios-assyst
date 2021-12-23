@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Axios_Assyst.Models
+namespace Axios_Assyst.Models.Lookups
 {
-    public class _priority
+    public class _item
     {
         public _resolvingParameters resolvingParameters;
-        public _priority()
+        public _item()
         {
 
         }
-        public _priority(string parameterName, string parameterValue)
+        public _item(string parameterName, string parameterValue)
         {
             resolvingParameters = new _resolvingParameters() { parameterName = parameterName, parameterValue = parameterValue };
         }

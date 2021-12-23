@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Actions
 {
-    public class emailUser : action
+    public class emailUser : Models.Endpoints._action
     {
         public int affectedUserId;
 
@@ -15,8 +15,8 @@ namespace Axios_Assyst.Actions
             this.affectedUserId = affectedUserId;
             this.eventId = eventId;
             this.remarks = remarks;
-            this.serviceTime = new Models._serviceTime { value = serviceTime };
-            this.actionType = new Models._actionType { resolvingParameters = new Models._resolvingParameters { parameterName = "shortCode", parameterValue = "EMAIL CUSTOMER" } };
+            this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
+            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "EMAIL CUSTOMER" } };
         }
     }
 }

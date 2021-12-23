@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Actions
 {
-    public class reassign : action
+    public class reassign : Models.Endpoints._action
     {
         public int assignedServDeptId { get; set; }
 
@@ -15,8 +15,8 @@ namespace Axios_Assyst.Actions
             this.eventId = eventId;
             this.remarks = remarks;
             this.assignedServDeptId = assignedServDeptId;
-            this.actionType = new Models._actionType { resolvingParameters = new Models._resolvingParameters { parameterName = "shortCode", parameterValue = "REASSIGN" } };
-            this.serviceTime = new Models._serviceTime { value = serviceTime };
+            this.actionType = new Models.Lookups._actionType { resolvingParameters = new Models.Lookups._resolvingParameters { parameterName = "shortCode", parameterValue = "REASSIGN" } };
+            this.serviceTime = new Models.Common._serviceTime { value = serviceTime };
         }
     }
 }
