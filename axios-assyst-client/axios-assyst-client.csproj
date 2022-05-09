@@ -10,10 +10,15 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="107.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\axios-assyst\Axios Assyst.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Axios\Assyst\HttpHandler\" />
   </ItemGroup>
 
 </Project>
