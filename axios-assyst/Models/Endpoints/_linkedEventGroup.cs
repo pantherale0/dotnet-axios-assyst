@@ -21,5 +21,6 @@ namespace Axios_Assyst.Models.Endpoints
         public bool? systemRecord { get; set; }
         public bool? annonymousRecord { get; set; }
         public bool? record { get; set; }
+        public Models.Common._linkedEvents[] linkedEvents { get; set; }
     }
 }
