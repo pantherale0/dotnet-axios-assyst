@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Common
 {
-    public class _customFields
+    public class _customFields : Shared._base
     {
         public string customFieldShortCode { get; set; }
         public string stringValue { get; set; }

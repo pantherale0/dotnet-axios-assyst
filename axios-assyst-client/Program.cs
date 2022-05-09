@@ -48,6 +48,5 @@ Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtons
 Console.WriteLine();
 
 
-
 axios_assyst_client.Axios.Assyst.HttpHandler handler = new axios_assyst_client.Axios.Assyst.HttpHandler("test", "test", "https://example.com/assystREST/v2");
 axios_assyst_client.Axios.Assyst.Events.Get get = new axios_assyst_client.Axios.Assyst.Events.Get(handler);

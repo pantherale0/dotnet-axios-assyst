@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Endpoints
 {
-    public class _event
+    public class _event : Shared._base
     {
         public Models.Common._customFields[]? customFields;
         public int? eventId;

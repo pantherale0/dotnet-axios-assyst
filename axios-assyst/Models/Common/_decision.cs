@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Common
 {
-    public class _decision
+    public class _decision : Shared._base
     {
         public string answer { get; set; }
     }

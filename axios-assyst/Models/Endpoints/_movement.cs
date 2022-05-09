@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Endpoints
 {
-    public class _movement
+    public class _movement : Shared._base
     {
-        public string remarks = "";
-        public bool? discontinued;
         public int? itemId;
         public DateTime? moveDate;
         public int? moveReasonId;

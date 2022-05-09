@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Endpoints
 {
-    public class _action
+    public class _action : Shared._base
     {
         public int eventId { get; set; }
-        public string remarks { get; set; }
         public Common._serviceTime serviceTime { get; set; }
         public Lookups._actionType actionType { get; set; }
 

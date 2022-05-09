@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Common
 {
-    public class _priority
+    public class _priority : Shared._base
     {
         public Lookups._resolvingParameters[] resolvingParameters;
         public _priority()

@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Axios_Assyst.Models.Endpoints
 {
-    public class _linkedEventGroup
+    public class _linkedEventGroup : Shared._base
     {
-        public int? id { get; set; }
-        public bool? objectAvailable { get; set; }
-        public bool? systemRecordFlag { get; set; }
-        public int? entityDefinitionType { get; set; }
-        public bool? cacheable { get; set; }
-        public string dataLocale { get; set; }
         public DateTime? linkDate { get; set; }
         public int? assystUserId { get; set; }
         public string linkGroupRemarks { get; set; }
