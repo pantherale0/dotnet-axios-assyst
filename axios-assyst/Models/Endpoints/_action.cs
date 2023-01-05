@@ -11,6 +11,7 @@ namespace Axios_Assyst.Models.Endpoints
         public int eventId { get; set; }
         public Common._serviceTime serviceTime { get; set; }
         public Lookups._actionType actionType { get; set; }
+        public Common._attachments[] attachments { get; set; }
 
         // Default contructor
         public _action() { }

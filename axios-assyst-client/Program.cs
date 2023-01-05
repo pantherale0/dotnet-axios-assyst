@@ -47,6 +47,10 @@ eventData.assignedServDeptId = 1;
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(eventData, Newtonsoft.Json.Formatting.Indented, settings));
 Console.WriteLine();
 
+// Test creation of a new sendEmail action
+Axios_Assyst.Actions.emailUser sendEmail = new Axios_Assyst.Actions.emailUser(1234, "TEST EMAIL CONTENTS", 1, 1);
+Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(sendEmail, Newtonsoft.Json.Formatting.Indented, settings));
+
 
 axios_assyst_client.Axios.Assyst.HttpHandler handler = new axios_assyst_client.Axios.Assyst.HttpHandler("test", "test", "https://example.com/assystREST/v2");
 axios_assyst_client.Axios.Assyst.Events.Get get = new axios_assyst_client.Axios.Assyst.Events.Get(handler);
